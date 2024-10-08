@@ -1,0 +1,22 @@
+services:
+  letsencrypt:
+    image: lscr.io/linuxserver/swag:latest
+    container_name: letsencrypt
+    volumes:
+      - /opt/letsencrypt:/config
+    restart: always
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - EMAIL=info@thequiteproject.org
+      - URL=thequiteproject.org
+      - SUBDOMAINS=supreme
+      - ONLY_SUBDOMAINS=false
+      - DHLEVEL=4096
+      - TZ=Europe/Amsterdam
+      - VALIDATION=http
+    ports:
+      - 8443:443
+      - 8083:80
