@@ -12,7 +12,7 @@ services:
       - PGID=${PGID}
       - EMAIL=info@thequiteproject.org
       - URL=thequiteproject.org
-      - SUBDOMAINS=supreme
+      - SUBDOMAINS=quiet-server
       - ONLY_SUBDOMAINS=false
       - DHLEVEL=4096
       - TZ=Europe/Amsterdam
